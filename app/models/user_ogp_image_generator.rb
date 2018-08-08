@@ -15,14 +15,16 @@ class UserOgpImageGenerator
                       : ActionController::Base.helpers.image_path('default-avatar.png', host: 'http://localhost:3000')
 
     image = Magick::ImageList.new
-    image.new_image(1200, 630)
+    image.new_image(1200, 630) do
+      self.background_color = '#e5e5e5'
+    end
 
     draw = Magick::Draw.new
     draw.gravity = Magick::CenterGravity
     draw.font = Rails.root.join('app', 'assets', 'fonts', 'NotoSansCJKjp-Medium.otf').to_s
     draw.fill = 'white'
 
-    # profile icon
+    # avatar
     avatar_image = Magick::Image.from_blob(open(avatar_path).read).first
     avatar_image = avatar_image.resize(320, 320)
     image.composite!(avatar_image, Magick::CenterGravity, 0, -80, Magick::OverCompositeOp)

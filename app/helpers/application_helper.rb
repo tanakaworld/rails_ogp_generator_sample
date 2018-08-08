@@ -9,13 +9,13 @@ module ApplicationHelper
                 alt: user.name
   end
 
-  def render_user_ogp_image(user)
+  def render_user_ogp_image(user, height: 30)
     ogp_image_url = user.user_ogp_image.present? ? url_for(user.user_ogp_image.image.url) : image_url('default-ogp.png')
 
     content_tag :img,
                 nil,
                 src: ogp_image_url,
-                height: 30,
+                height: height,
                 alt: user.name
   end
 end
