@@ -12,4 +12,4 @@ $ bin/rails s
 - Create/Update a user.
 - The OGP image is automatically created after user info saved.
 
-![image](https://user-images.githubusercontent.com/3489430/43837305-0812dc30-9b53-11e8-94f8-61fb82f00174.png)
+![image](https://user-images.githubusercontent.com/3489430/43838431-4d451c84-9b56-11e8-9058-b575d5876a83.png)
