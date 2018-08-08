@@ -4,6 +4,12 @@
   <title>RailsOgpGeneratorSample</title>
   <%= csrf_meta_tags %>
 
+  <% if @ogp_image.present? %>
+    <meta property="og:image" content="<%= @ogp_image %>"/>
+  <% else %>
+    <meta property="og:image" content="<%= image_url('default-ogp.png') %>"/>
+  <% end %>
+
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>

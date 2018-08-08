@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @ogp_image = @user.user_ogp_image.present? ? @user.user_ogp_image.url : image_url('default-ogp.png')
   end
 
   # GET /users/new
